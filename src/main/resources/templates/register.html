@@ -12,7 +12,7 @@
         <div class="col-md-6">
             <div class="card shadow-lg border-0 rounded-4">
                 <div class="card-body p-4">
-                    <h2 class="text-center mb-4 fw-bold">Create Your Account</h2>
+                    <h2 class="text-center mb-4 fw-bold brand-accent">Create Your Account</h2>
                     <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
                     <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
                     <form th:action="@{/register}" th:object="${registrationRequest}" method="post">
