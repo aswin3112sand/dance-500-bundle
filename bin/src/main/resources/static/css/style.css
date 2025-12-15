@@ -1,0 +1,16 @@
+body {
+    background-color: #0b0b10;
+}
+
+.hero-bg {
+    background: radial-gradient(circle at top left, #ff7b00, #111827 60%);
+    color: white;
+}
+
+.preview-card {
+    border-radius: 1.5rem;
+}
+
+.card {
+    border-radius: 1rem;
+}

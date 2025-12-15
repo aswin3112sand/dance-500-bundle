@@ -1,0 +1,17 @@
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\config\DataInitializer.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\config\SecurityConfig.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\controller\AdminController.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\controller\AuthController.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\controller\HomeController.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\DancePlatformApplication.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\dto\RegistrationRequest.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\model\DanceVideo.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\model\User.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\model\UserRole.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\repository\DanceVideoRepository.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\repository\UserRepository.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\service\DanceVideoService.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\service\impl\CustomUserDetailsService.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\service\impl\DanceVideoServiceImpl.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\service\impl\UserServiceImpl.java
+C:\Users\riote\Downloads\dance-500-bundle\src\main\java\com\example\danceplatform\service\UserService.java

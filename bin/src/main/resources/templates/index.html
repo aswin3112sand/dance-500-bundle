@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>500 Dance Steps Bundle | Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/">Dance500</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#nav" aria-controls="nav" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" th:href="@{/bundle}">Bundle Details</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/payment-guide}">How Payment Works</a></li>
+                <li class="nav-item"><a class="btn btn-primary ms-2" th:href="@{/checkout}">Buy Now</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="py-5 hero-bg">
+    <div class="container">
+        <div class="row align-items-center gy-4">
+            <div class="col-md-6">
+                <h1 class="display-5 fw-bold mb-3 text-white">
+                    500 Dance Steps Mega Bundle 💃
+                </h1>
+                <p class="lead text-light">
+                    100 easy, 100 medium, 100 mix, 200 hard – ready-made choreo library for YouTube, Reels, weddings & classes.
+                </p>
+                <p class="h4 text-warning mb-4">
+                    Just ₹<span th:text="${product.priceInRupees}">499</span> – One-time payment, lifetime access.
+                </p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a class="btn btn-lg btn-warning text-dark fw-semibold"
+                       th:href="@{/checkout}">Get Instant Access</a>
+                    <a class="btn btn-outline-light btn-lg"
+                       th:href="@{/bundle}">See what’s inside</a>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="preview-card p-4 bg-white rounded-4 shadow">
+                    <h5 class="fw-bold mb-3">Inside the Bundle</h5>
+                    <ul class="list-group text-start mb-3">
+                        <li class="list-group-item">✅ 100 Easy steps (melody + basics)</li>
+                        <li class="list-group-item">✅ 100 Medium steps (semi-fast)</li>
+                        <li class="list-group-item">✅ 100 Mix steps (easy + medium combo)</li>
+                        <li class="list-group-item">✅ 200 Hard steps (kuthu, western, power)</li>
+                    </ul>
+                    <p class="small text-muted mb-3">
+                        Perfect for beginners, dancers, choreographers & content creators.
+                    </p>
+                    <a class="btn btn-primary w-100" th:href="@{/checkout}">Buy 500 Steps Bundle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-3 bg-dark text-center text-secondary small">
+    © 2025 Dance500. All rights reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
