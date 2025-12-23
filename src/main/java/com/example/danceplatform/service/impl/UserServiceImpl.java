@@ -1,17 +1,16 @@
 package com.example.danceplatform.service.impl;
 
-import com.example.danceplatform.dto.RegistrationRequest;
+import com.example.danceplatform.dto.RegisterRequest;
 import com.example.danceplatform.model.User;
 import com.example.danceplatform.model.UserRole;
 import com.example.danceplatform.repository.UserRepository;
+import com.example.danceplatform.security.UserPrincipal;
 import com.example.danceplatform.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -21,34 +20,35 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    @Transactional
-    public User registerUser(RegistrationRequest request) {
+    public User register(RegisterRequest request) {
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new IllegalArgumentException("Email already registered");
         }
-
-        if (!request.getPassword().equals(request.getConfirmPassword())) {
-            throw new IllegalArgumentException("Passwords do not match");
-        }
-
         User user = User.builder()
                 .name(request.getName())
                 .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .role(UserRole.ROLE_USER)
-                .createdAt(LocalDateTime.now())
+                .passwordHash(passwordEncoder.encode(request.getPassword()))
+                .role(UserRole.USER)
+                .unlockedBundle(false)
                 .build();
-
         return userRepository.save(user);
     }
 
     @Override
-    public List<User> findAll() {
-        return userRepository.findAll();
+    public User getCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !(authentication.getPrincipal() instanceof UserPrincipal principal)) {
+            throw new IllegalStateException("User not authenticated");
+        }
+        return userRepository.findById(principal.getId())
+                .orElseThrow(() -> new IllegalStateException("User not found"));
     }
 
     @Override
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email).orElse(null);
+    public void markBundleUnlocked(User user) {
+        if (!user.isUnlockedBundle()) {
+            user.setUnlockedBundle(true);
+            userRepository.save(user);
+        }
     }
 }

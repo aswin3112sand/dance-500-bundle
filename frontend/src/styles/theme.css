@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+:root {
+  --bg-0: #060914;
+  --bg-1: #0b1330;
+  --bg-2: #141b3d;
+  --bg-3: #0e1836;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Poppins', 'Inter', system-ui, sans-serif;
+  --neon-blue: #4da3ff;
+  --neon-cyan: #79e3ff;
+  --neon-purple: #6b5cff;
+  --text-strong: #f2f6ff;
+  --text-soft: rgba(242, 246, 255, 0.78);
+  --text-dim: rgba(242, 246, 255, 0.6);
+  --glass-bg: rgba(16, 22, 42, 0.7);
+  --glass-strong: rgba(12, 16, 32, 0.86);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-strong: rgba(255, 255, 255, 0.2);
+  --shadow-strong: 0 30px 80px rgba(4, 8, 22, 0.6);
+  --shadow-soft: 0 18px 40px rgba(6, 10, 24, 0.42);
+  --shadow-glow: 0 0 36px rgba(77, 163, 255, 0.18), 0 0 70px rgba(107, 92, 255, 0.16);
+  --glass-blur: 16px;
+  --glass-blur-strong: 18px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --input-height: 48px;
+  --glass: var(--glass-bg);
+  --border: var(--glass-border);
+  --text: var(--text-strong);
+  --muted: var(--text-soft);
+  --soft: var(--text-dim);
+  --glow-purple: var(--neon-purple);
+  --glow-blue: var(--neon-blue);
+  --glow-cyan: var(--neon-cyan);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, var(--bg-0) 0%, var(--bg-1) 45%, var(--bg-2) 75%, var(--bg-3) 100%);
+  color: var(--text-strong);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: -10% -5%;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(77, 163, 255, 0.2), transparent 55%),
+    radial-gradient(circle at 78% 12%, rgba(107, 92, 255, 0.22), transparent 55%),
+    radial-gradient(circle at 50% 85%, rgba(121, 227, 255, 0.14), transparent 60%);
+  z-index: -2;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(130deg, rgba(255, 255, 255, 0.035) 0px, rgba(255, 255, 255, 0.035) 1px, transparent 1px, transparent 160px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: auto, 140px 140px, 220px 220px;
+  background-position: 0 0, 10px 20px, 80px 120px;
+  opacity: 0.26;
+  z-index: -1;
+  pointer-events: none;
+}
+
+::selection {
+  background: rgba(77, 163, 255, 0.3);
+  color: var(--text-strong);
+}

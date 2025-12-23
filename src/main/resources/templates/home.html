@@ -1,56 +1,289 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="ta" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Home | Dance Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AS DANCE | 619 Dance Steps Bundle</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body class="landing">
+<nav class="navbar navbar-expand-lg nav-glass">
     <div class="container">
-        <a class="navbar-brand fw-bold brand-script" href="#">Dance500</a>
         <div class="d-flex align-items-center gap-3">
+            <a class="navbar-brand brand-mark" href="#">AS DANCE</a>
+            <span class="nav-tag d-none d-md-inline">619 டான்ஸ் ஸ்டெப்ஸ் பண்டில் / 619 Dance Steps Bundle</span>
+        </div>
+        <div class="d-flex align-items-center gap-2 gap-md-3">
+            <a class="btn btn-glow btn-sm" href="#cta-buy-now">Get Now / Buy Now</a>
             <a class="btn btn-outline-light btn-sm" th:href="@{/admin/dashboard}" sec:authorize="hasRole('ADMIN')">Admin Dashboard</a>
             <form th:action="@{/logout}" method="post" class="mb-0">
                 <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
-                <button class="btn btn-primary">Logout</button>
+                <button class="btn btn-outline-light btn-sm">Logout</button>
             </form>
         </div>
     </div>
 </nav>
 
-<header class="py-5 hero-bg text-white text-center">
-    <div class="container">
-        <p class="mb-3 text-uppercase small fw-semibold tracking-wider">Exclusive Dance Video Platform</p>
-        <h1 class="display-5 fw-bold brand-accent">Unlock 500+ Premium Dance Tutorials</h1>
-        <p class="lead text-white-50 mb-0">Fresh routines, bite-sized lessons, and pro choreography added weekly.</p>
-    </div>
-</header>
-
-<main class="py-5">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-12">
-                <h2 class="fw-bold mb-4">Today's Featured 10 Videos</h2>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3" th:each="video : ${videos}">
-                <div class="dance-card" th:data-title="${video.title}">
-                    <div class="thumb-wrapper">
-                        <img th:src="${video.thumbnailUrl}" alt="Dance thumbnail">
-                        <span class="tag">New</span>
+<main>
+    <section id="hero" class="section hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-copy reveal" data-reveal="left">
+                    <p class="eyebrow">லாஞ்ச் ஆஃபர் - Limited Time</p>
+                    <h1 class="hero-title">
+                        <span class="hero-title-label">AS DANCE</span>
+                        <span class="hero-title-number" data-count="619" data-duration="1400">619</span>
+                        <span class="hero-title-sub">டான்ஸ் ஸ்டெப்ஸ் பண்டில் / Dance Steps Bundle</span>
+                    </h1>
+                    <p class="hero-subtitle">ப்ராக்டிக்கல், ஸ்டெப்-பை-ஸ்டெப் கற்றுக்கொள்ளுங்கள் / Practical, step-by-step learning.</p>
+                    <p class="hero-counts-line">
+                        EASY <span data-count="194">194</span> + MEDIUM <span data-count="219">219</span> + HARD <span data-count="206">206</span>
+                    </p>
+                    <div class="hero-counts">
+                        <div class="glass-card count-chip reveal" data-reveal="up">
+                            <span class="count-label">EASY</span>
+                            <span class="count-number" data-count="194">194</span>
+                            <span class="count-text">ஸ்டெப்ஸ் / steps</span>
+                        </div>
+                        <div class="glass-card count-chip reveal" data-reveal="up">
+                            <span class="count-label">MEDIUM</span>
+                            <span class="count-number" data-count="219">219</span>
+                            <span class="count-text">ஸ்டெப்ஸ் / steps</span>
+                        </div>
+                        <div class="glass-card count-chip reveal" data-reveal="up">
+                            <span class="count-label">HARD</span>
+                            <span class="count-number" data-count="206">206</span>
+                            <span class="count-text">ஸ்டெப்ஸ் / steps</span>
+                        </div>
                     </div>
-                    <div class="p-3">
-                        <h5 class="mb-1" th:text="${video.title}">Groove Pack</h5>
-                        <p class="text-muted small mb-0" th:text="${video.description}">Description</p>
+                    <div class="hero-notes">
+                        <span>உண்மையான மனிதர் - பின்பக்கம் பார்வை மட்டும் / Real human - back view only</span>
+                        <span>முகம் காட்டப்படாது - No face reveal</span>
+                        <span>ரியலிஸ்டிக் லெர்னிங் - Realistic learning</span>
+                    </div>
+                    <div class="hero-pricing">
+                        <span class="price-original">மூல விலை / Original Price</span>
+                        <span class="price-offer">₹499</span>
+                        <span class="price-note">ஆஃபர் விலை - லாஞ்ச் ஆஃபர் / Offer price - Launch offer</span>
+                    </div>
+                    <div class="hero-actions">
+                        <a class="btn btn-glow" href="#cta-buy-now">Get Now / Buy Now</a>
+                        <span class="offer-pill">வரம்புகாலம் / Limited time</span>
+                    </div>
+                </div>
+                <div class="hero-visual reveal" data-reveal="right">
+                    <div class="hero-poster">
+                        <div class="poster-content">
+                            <span class="poster-number" data-count="619">619</span>
+                            <span class="poster-counts">EASY 194 + MEDIUM 219 + HARD 206</span>
+                            <span class="poster-note">உண்மையான மனிதர் - பின்பக்கம் பார்வை மட்டும் - சிலூஎட் / shadow ok</span>
+                        </div>
+                        <div class="poster-silhouette">
+                            <span>டான்சர் சிலூஎட் / Dancer silhouette</span>
+                            <span>பின்பக்கம் பார்வை மட்டும் / Back view only</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12" th:if="${#lists.isEmpty(videos)}">
-                <div class="alert alert-info text-center">No videos available yet. Please check back later.</div>
+        </div>
+    </section>
+
+    <section id="bundle-overview" class="section">
+        <div class="container">
+            <div class="section-heading reveal" data-reveal="up">
+                <p class="section-kicker">பண்டில் முன்னோட்டம் / Bundle Overview</p>
+                <h2 class="section-title">வாடிக்கையாளர் தெளிவு முதன்மை / Customer clarity is priority</h2>
+                <p class="section-subtitle">ப்ராக்டிக்கல், ஸ்டெப்-பை-ஸ்டெப் கற்றல். யாரும் கற்றுக்கொள்ளலாம். / Practical, step-by-step learning. Anyone can learn.</p>
+            </div>
+            <div class="overview-grid">
+                <div class="glass-card reveal" data-reveal="up">
+                    <h3 class="card-title">கற்றல் முறை / Teaching Style</h3>
+                    <p>ப்ராக்டிக்கல், ஸ்டெப்-பை-ஸ்டெப் / Practical, step-by-step.</p>
+                </div>
+                <div class="glass-card reveal" data-reveal="up">
+                    <h3 class="card-title">டான்சர் பார்வை / Dancer View</h3>
+                    <p>உண்மையான மனிதர், பின்பக்கம் பார்வை மட்டும் / Real human, back view only.</p>
+                    <p>முகம் காட்டப்படாது / No face reveal.</p>
+                </div>
+                <div class="glass-card reveal" data-reveal="up">
+                    <h3 class="card-title">நிஜமான கற்றல் / Realistic Learning</h3>
+                    <p>ரியலிஸ்டிக் லெர்னிங், சினிமாட்டிக் எக்ஸாஜரேஷன் இல்லை / Realistic learning, not cinematic exaggeration.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="steps-breakdown" class="section steps-section">
+        <div class="container">
+            <div class="section-heading reveal" data-reveal="up">
+                <p class="section-kicker">ஸ்டெப்ஸ் பிரிவு / Steps Breakdown</p>
+                <h2 class="section-title">619 ஸ்டெப்ஸ் தெளிவு / 619 steps clarity</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="glass-card step-card reveal" data-reveal="up">
+                    <span class="step-label">EASY</span>
+                    <span class="step-number" data-count="194">194</span>
+                    <span class="step-text">ஸ்டெப்ஸ் / steps</span>
+                </div>
+                <div class="glass-card step-card reveal" data-reveal="up">
+                    <span class="step-label">MEDIUM</span>
+                    <span class="step-number" data-count="219">219</span>
+                    <span class="step-text">ஸ்டெப்ஸ் / steps</span>
+                </div>
+                <div class="glass-card step-card reveal" data-reveal="up">
+                    <span class="step-label">HARD</span>
+                    <span class="step-number" data-count="206">206</span>
+                    <span class="step-text">ஸ்டெப்ஸ் / steps</span>
+                </div>
+            </div>
+            <div class="steps-total glass-card reveal" data-reveal="up">
+                <span class="total-label">மொத்தம் / Total</span>
+                <span class="total-number" data-count="619">619</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="preview-section" class="section preview-section">
+        <div class="container">
+            <div class="section-heading reveal" data-reveal="up">
+                <p class="section-kicker">முன்னோட்டம் / Preview</p>
+                <h2 class="section-title">உண்மையான டான்சர் டெமோ, பின்பக்கம் பார்வை மட்டும் / Real dancer demo, back view only</h2>
+            </div>
+            <div class="preview-grid">
+                <div class="glass-card reveal" data-reveal="left">
+                    <h3 class="card-title">வீடியோ ஒரேமை / Video Alignment</h3>
+                    <ul class="clean-list">
+                        <li>ஒவ்வொரு ஸ்டெப் வீடியோ குறுகிய & ப்ராக்டிக்கல் / Each step video short & practical.</li>
+                        <li>ஒரே கேமரா framing, lighting, angle / Same camera framing, lighting, angle.</li>
+                        <li>ஒரே teaching pace / Same teaching pace.</li>
+                        <li>எக்ஸ்பிளனேஷன் க்கு மேல் இசை இல்லை / No music overpowering explanation.</li>
+                        <li>உண்மையான டான்சர் மட்டும் / Real dancer demonstration only.</li>
+                    </ul>
+                </div>
+                <div class="glass-card reveal" data-reveal="right">
+                    <h3 class="card-title">கோப்பு அமைப்பு / Folder Logic</h3>
+                    <div class="folder-tags">
+                        <span class="tag-pill">EASY/</span>
+                        <span class="tag-pill">MEDIUM/</span>
+                        <span class="tag-pill">HARD/</span>
+                    </div>
+                </div>
+            </div>
+            <div class="preview-videos">
+                <h3 class="section-mini-title">முன்னோட்ட வீடியோக்கள் / Preview videos</h3>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-4 col-xl-3" th:each="video : ${videos}">
+                        <div class="dance-card reveal" data-reveal="up" th:data-title="${video.title}">
+                            <div class="thumb-wrapper">
+                                <img th:src="${video.thumbnailUrl}" alt="Dance preview thumbnail">
+                                <span class="tag">முன்னோட்டம்</span>
+                            </div>
+                            <div class="p-3">
+                                <h5 class="mb-1" th:text="${video.title}">Groove Pack</h5>
+                                <p class="text-muted small mb-0" th:text="${video.description}">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12" th:if="${#lists.isEmpty(videos)}">
+                        <div class="alert alert-info text-center">இன்னும் வீடியோக்கள் இல்லை. பின்னர் பார்க்கவும். / No videos available yet. Please check back later.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews-scroll" class="section reviews-section">
+        <div class="container">
+            <div class="section-heading reveal" data-reveal="up">
+                <p class="section-kicker">விமர்சனங்கள் / Reviews</p>
+                <h2 class="section-title">தெளிவு & நம்பிக்கை / Clarity & trust</h2>
+            </div>
+        </div>
+        <div class="reviews-marquee" aria-label="Review images">
+            <div class="review-track">
+                <div class="review-card">விமர்சன படம் / Review image</div>
+                <div class="review-card">விமர்சன படம் / Review image</div>
+                <div class="review-card">விமர்சன படம் / Review image</div>
+                <div class="review-card">விமர்சன படம் / Review image</div>
+                <div class="review-card">விமர்சன படம் / Review image</div>
+                <div class="review-card">விமர்சன படம் / Review image</div>
+                <div class="review-card" aria-hidden="true">விமர்சன படம் / Review image</div>
+                <div class="review-card" aria-hidden="true">விமர்சன படம் / Review image</div>
+                <div class="review-card" aria-hidden="true">விமர்சன படம் / Review image</div>
+                <div class="review-card" aria-hidden="true">விமர்சன படம் / Review image</div>
+                <div class="review-card" aria-hidden="true">விமர்சன படம் / Review image</div>
+                <div class="review-card" aria-hidden="true">விமர்சன படம் / Review image</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing-offer" class="section pricing-section">
+        <div class="container">
+            <div class="pricing-grid">
+                <div class="glass-card pricing-card reveal" data-reveal="left">
+                    <p class="section-kicker">லாஞ்ச் ஆஃபர் & விலை / Launch offer & pricing</p>
+                    <h2 class="price-main">₹499</h2>
+                    <p class="price-label">ஆஃபர் விலை / Offer price</p>
+                    <div class="price-original">மூல விலை / Original Price</div>
+                    <p class="price-note">வரம்புகாலம் / Limited time</p>
+                    <a class="btn btn-glow" href="#cta-buy-now">Get Now / Buy Now</a>
+                </div>
+                <div class="glass-card flow-card reveal" data-reveal="right">
+                    <h3 class="card-title">பேமெண்ட் ஃப்ளோ / Payment Flow</h3>
+                    <ul class="clean-list">
+                        <li>“Get Now / Buy Now” கிளிக் செய்யுங்கள் / Click “Get Now / Buy Now”.</li>
+                        <li>லாகின் இருந்தால் -> Razorpay payment / Logged in -> Razorpay payment.</li>
+                        <li>லாகின் இல்லை -> Login -> payment க்கு திரும்பும் / Not logged in -> Login -> return to payment.</li>
+                        <li>பேமெண்ட் முடிந்ததும் -> content unlock / After payment -> unlock content.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-buy-now" class="section cta-section">
+        <div class="container">
+            <div class="glass-card cta-card reveal" data-reveal="up">
+                <h2 class="section-title">619 ஸ்டெப்ஸ் - ப்ராக்டிக்கல் கற்றல் / 619 steps - practical learning</h2>
+                <p class="section-subtitle">யாரும் கற்றுக்கொள்ளலாம். / Anyone can learn.</p>
+                <a class="btn btn-glow btn-lg" href="#pricing-offer">Get Now / Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section faq-section">
+        <div class="container">
+            <div class="section-heading reveal" data-reveal="up">
+                <p class="section-kicker">அடிக்கடி கேள்விகள் / FAQ</p>
+                <h2 class="section-title">தெளிவான பதில்கள் / Clear answers</h2>
+            </div>
+            <div class="faq-grid">
+                <details class="faq-item reveal" data-reveal="up">
+                    <summary>இந்த பண்டிலில் என்ன உள்ளது? / What's inside?</summary>
+                    <p>619 ஸ்டெப்ஸ்: EASY 194 + MEDIUM 219 + HARD 206.</p>
+                </details>
+                <details class="faq-item reveal" data-reveal="up">
+                    <summary>கற்றல் முறை எப்படி? / Teaching style?</summary>
+                    <p>ப்ராக்டிக்கல், ஸ்டெப்-பை-ஸ்டெப் / Practical, step-by-step.</p>
+                </details>
+                <details class="faq-item reveal" data-reveal="up">
+                    <summary>டான்சர் பார்வை? / Dancer view?</summary>
+                    <p>உண்மையான மனிதர், பின்பக்கம் பார்வை மட்டும். முகம் காட்டப்படாது. / Real human, back view only. No face reveal.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="glass-card contact-card reveal" data-reveal="up">
+                <h2 class="section-title">தொடர்பு / Contact</h2>
+                <p class="section-subtitle">வாடிக்கையாளர் தெளிவு முதன்மை. / Customer clarity is priority.</p>
+                <p class="section-subtitle">உங்கள் சந்தேகங்களுக்கு தெளிவு. / Clear answers for your questions.</p>
+            </div>
+        </div>
+    </section>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

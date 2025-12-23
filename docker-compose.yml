@@ -1,0 +1,47 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: dance500
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_USER: dance
+      MYSQL_PASSWORD: dancepass
+    ports:
+      - '3306:3306'
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  backend:
+    build: .
+    depends_on:
+      - db
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/dance500?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: dance
+      SPRING_DATASOURCE_PASSWORD: dancepass
+      CORS_ALLOWED_ORIGINS: http://localhost:3000
+      JWT_SECRET: change-me-in-prod-change-me-in-prod-change-me
+      RAZORPAY_KEY_ID: ${RAZORPAY_KEY_ID}
+      RAZORPAY_KEY_SECRET: ${RAZORPAY_KEY_SECRET}
+      STORAGE_UPLOAD_DIR: /app/uploads
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./uploads:/app/uploads
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE_URL: http://localhost:8080
+        VITE_RAZORPAY_KEY_ID: ${RAZORPAY_KEY_ID}
+    ports:
+      - '3000:80'
+    depends_on:
+      - backend
+
+volumes:
+  dbdata:

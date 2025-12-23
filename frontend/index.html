@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AS DANCE - 639 Premium Dance Steps | Tamil Training</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Learn 639 premium Tamil dance steps with lifetime access. Professional training videos, step-by-step tutorials, and real-time song practice. Christmas Special: ₹1500 → ₹499 ONLY!" />
+    <meta name="keywords" content="Tamil dance, dance steps, dance training, Tamil choreography, dance tutorials, AS DANCE" />
+    <meta name="author" content="AS DANCE" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AS DANCE - 639 Premium Dance Steps | Tamil Training" />
+    <meta property="og:description" content="Learn 639 premium Tamil dance steps with lifetime access. Christmas Special: ₹1500 → ₹499 ONLY!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://asdance.com" />
+    <meta property="og:image" content="/og-image.jpg" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AS DANCE - 639 Premium Dance Steps" />
+    <meta name="twitter:description" content="Learn Tamil dance with 639 premium steps. Lifetime access for ₹499!" />
+    <meta name="twitter:image" content="/twitter-image.jpg" />
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/videos/dance-bg.mp4" as="video" type="video/mp4">
+    
+    <style>
+      /* Critical CSS for immediate rendering */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1b3a 50%, #2d1b69 100%);
+        color: #ffffff;
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+      
+      /* Loading spinner */
+      .loading-spinner {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+      }
+      
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        border-top: 3px solid #a855f7;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Loading spinner -->
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
